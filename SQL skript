@@ -1,0 +1,13 @@
+select  make,model,
+extract(year from buying_date) as rok,
+count(make) as počet_aut_model
+from cars_test
+group by make,model, extract(year from buying_date)
+order by make,model;
+
+select make, max(tachometer_km) as nejvyšší_nájezd, min(buying_date) as stáří from
+cars_test
+group by make;
+
+
+
